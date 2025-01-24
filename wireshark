@@ -1,0 +1,20 @@
+DNS queries;
+
+  dns.qry.name
+  (dns.flags.response == 0) and (ip.src == x.x.x.x)
+
+DNS responses;
+
+  dns.flags.response == 1
+
+HTTP Host header;
+
+  http.host
+
+HTTP requests;
+
+  (http.request.method == GET) or (http.request.method == POST)
+
+SNI;
+
+  tls.handshake.extensions_server_name
