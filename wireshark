@@ -1,20 +1,89 @@
-DNS queries;
+## DNS queries;
 
   dns.qry.name
   (dns.flags.response == 0) and (ip.src == x.x.x.x)
 
-DNS responses;
+## DNS responses;
 
   dns.flags.response == 1
 
-HTTP Host header;
+## HTTP Host header;
 
   http.host
 
-HTTP requests;
+## HTTP requests;
 
   (http.request.method == GET) or (http.request.method == POST)
 
-SNI;
+## HTTPS SNI
 
   tls.handshake.extensions_server_name
+
+
+## WireScans
+
+tcp.flags.syn==1 and tcp.flags.ack==0 and tcp.window_size > 1024    # TCP Connect 
+tcp.flags.syn==1 and tcp.flags.ack==0 and tcp.window_size <= 1024   # TCP SYN
+icmp.type==3 and icmp.code==3                                       # UDP
+udp.dstport > 55 and udp.dstport < 77 and not icmp                  # UDP Open
+
+
+## ARP
+arp.opcode == 1                                        # Request
+arp.opcode == 2                                        # Response
+arp.src.hw_mac==00:0c:29:e2:18:b4 and arp.opcode == 1  # ARP Scan
+
+## MAC
+eth.addr == 00:0c:29:e2:18:b4
+eth.dst == 00:0c:29:e2:18:b4 and http
+
+## DHCP
+dhcp.option.dhcp == 3                           # Request
+dhcp.option.hostname contains "Galaxy"
+
+
+## NetBIOS Name Service
+nbns
+nbns.name contains "LIVALJM"
+
+## Data smuggling
+dns
+data.len > 64 and icmp
+
+## FTP
+ftp.response.code == 200         # Valid login
+ftp.response.code == 530         # Invalid login
+
+## HTTP
+http.request
+http.response
+http.host contains "rad"
+http.host matches "\.(php|html)"
+-T fields -e "http.server" 
+http.server contains "Apache"
+http.server contains "Microsoft-IIS/7.5"
+http.user_agent                  # Add to columns!
+(http.user_agent contains "sqlmap") or (http.user_agent contains "Nmap") or (http.user_agent contains "Wfuzz") or (http.user_agent contains "Nikto")
+"http.request.method == POST" -T fields -e http.host -e http.request.uri -e urlencoded-form.key -e urlencoded-form.value
+http.request.full_uri == "http://cdn.blablabla.xyz:8080/27fe2489"
+
+## HTTPS
+tls.handshake.type == 1      # See server name in Extentions: server_name
+
+## Export objects
+--export-objects ?
+--export-objects "http,out_path"
+
+## DNS
+dns.qry.type == 1             # A record requests
+dns.flags.response == 1       # Query response (request is 0)
+
+## TCP
+tshark -r <pcap> -qz follow,tcp,ascii,0    # Follow TCP stream
+tcp.port in {80 443 8080}
+
+## IP
+ip.addr
+ip.src
+ip.dst
+
