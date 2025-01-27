@@ -1,4 +1,10 @@
 
+## WiFi
+
+wlan.fc.type_subtype eq 12    # Deauth
+wlan.fc.type_subtype eq 10    # Disassociate
+wlan.bssid == [MAC]           # See traffic to AP (your own??)
+
 ## DNS
   dns.qry.type == 1             # A record requests
   dns.flags.response == 1       # Query response (request is 0)
