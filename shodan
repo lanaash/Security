@@ -1,0 +1,11 @@
+sudo pip install shodan
+
+shodan init [API_Key]
+ 
+shodan search port:22 net:192.168.0.0/24
+
+shodan host 192.168.0.1
+
+shodan stats --facets port:20 net:192.168.0.0/24
+
+shodan search --fields ip_str,port,org,hostnames net:192.168.0.0/24 port:9100
