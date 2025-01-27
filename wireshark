@@ -1,23 +1,21 @@
-## DNS queries;
 
+## DNS
+  dns.qry.type == 1             # A record requests
+  dns.flags.response == 1       # Query response (request is 0)
   dns.qry.name
   (dns.flags.response == 0) and (ip.src == x.x.x.x)
 
-## DNS responses;
 
-  dns.flags.response == 1
-
-## HTTP Host header;
-
-  http.host
+## HTTP Host header
+http.host
 
 ## HTTP requests;
 
   (http.request.method == GET) or (http.request.method == POST)
 
-## HTTPS SNI
-
-  tls.handshake.extensions_server_name
+## HTTPS
+tls.handshake.type == 1      # See server name in Extentions: server_name
+tls.handshake.extensions_server_name
 
 
 ## WireScans
@@ -59,27 +57,19 @@ http.request
 http.response
 http.host contains "rad"
 http.host matches "\.(php|html)"
--T fields -e "http.server" 
 http.server contains "Apache"
 http.server contains "Microsoft-IIS/7.5"
 http.user_agent                  # Add to columns!
 (http.user_agent contains "sqlmap") or (http.user_agent contains "Nmap") or (http.user_agent contains "Wfuzz") or (http.user_agent contains "Nikto")
-"http.request.method == POST" -T fields -e http.host -e http.request.uri -e urlencoded-form.key -e urlencoded-form.value
 http.request.full_uri == "http://cdn.blablabla.xyz:8080/27fe2489"
 
-## HTTPS
-tls.handshake.type == 1      # See server name in Extentions: server_name
 
 ## Export objects
 --export-objects ?
 --export-objects "http,out_path"
 
-## DNS
-dns.qry.type == 1             # A record requests
-dns.flags.response == 1       # Query response (request is 0)
 
 ## TCP
-tshark -r <pcap> -qz follow,tcp,ascii,0    # Follow TCP stream
 tcp.port in {80 443 8080}
 
 ## IP
