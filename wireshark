@@ -11,6 +11,8 @@ wlan.bssid == [MAC]           # See traffic to AP (your own??)
   dns.qry.name
   (dns.flags.response == 0) and (ip.src == x.x.x.x)
 
+## Pi-Hole
+  dns.a == 0.0.0.0
 
 ## HTTP Host header
 http.host
