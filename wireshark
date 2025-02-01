@@ -35,13 +35,13 @@ udp.dstport > 55 and udp.dstport < 77 and not icmp                  # UDP Open
 
 
 ## ARP
-arp.opcode == 1                                        # Request
-arp.opcode == 2                                        # Response
-arp.src.hw_mac==00:0c:29:e2:18:b4 and arp.opcode == 1  # ARP Scan
+arp.opcode == 1                                          # Request
+arp.opcode == 2                                          # Response
+arp.src.hw_mac == 00:00:00:00:00:00 and arp.opcode == 1  # ARP Scan
 
 ## MAC
-eth.addr == 00:0c:29:e2:18:b4
-eth.dst == 00:0c:29:e2:18:b4 and http
+eth.addr == 00:00:00:00:00:00
+eth.dst == 00:00:00:00:00:00 and http
 
 ## DHCP
 dhcp.option.dhcp == 3                           # Request
