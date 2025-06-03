@@ -63,7 +63,6 @@ ftp.response.code == 530         # Invalid login
 ## HTTP
 http.request
 http.response
-http.host
 http.host contains "rad"
 http.host matches "\.(php|html)"
 http.server contains "Apache"
@@ -72,8 +71,6 @@ http.user_agent                  # Add to columns!
 (http.user_agent contains "sqlmap") or (http.user_agent contains "Nmap") or (http.user_agent contains "Wfuzz") or (http.user_agent contains "Nikto")
 http.request.full_uri == "http://cdn.blablabla.xyz:8080/27fe2489"
 
-## SNI
-tls.handshake.extensions_server_name
 
 ## Export objects
 --export-objects ?
