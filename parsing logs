@@ -1,0 +1,6 @@
+# Parsing logs
+
+## awk
+
+awk '{print $1=strftime("%F %R",$1) " " $3 "  " $5 " " $7}'	# Convert unix time on the fly i.e. $1
+awk '{sum+=$3} END {print sum}'				                      # Sum 'column' $3 totals e.g. send/recieve bytes
