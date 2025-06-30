@@ -1,6 +1,6 @@
 # sed
 
-## Convert to multiline and grep out the stuff you want
+## Convert fortigate logs to multiline and grep out the stuff you want
 sed -u -e 's/ /\n/g' | grep -E --line-buffered '^time|srcip|dstip|dstport|proto|^action' | sed '0~6 s/$/\n/g'
 
 
