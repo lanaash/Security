@@ -20,7 +20,7 @@ shodan parse --fields ip_str,port,org --separator , [filename].json.gz
 # Facets
 shodan stats --facets port asn:ASXXXX
 shodan stats --facets product asn:ASXXXX
-shodan stats --facets port:20 net:192.168.0.0/24
+shodan stats --facets port:22 net:192.168.0.0/24
 
 
 
