@@ -56,6 +56,10 @@ nbns.name contains "LIVALJM"
 dns
 data.len > 64 and icmp
 
+## NFS
+nfs.names
+nfs.opcode == 68
+
 ## FTP
 ftp.response.code == 200         # Valid login
 ftp.response.code == 530         # Invalid login
