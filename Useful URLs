@@ -21,7 +21,7 @@ Email headers https://mxtoolbox.com/EmailHeaders.aspx
 Email and dns data https://mxtoolbox.com/
 
 ## Investigating threats
-Investigate IOCs at https://threatfox.abuse.ch/browse/ e.g. ioc:x.x.x.x
+https://threatfox.abuse.ch/browse/ e.g. ioc:x.x.x.x
 www.hybrid-analysis.com can be used to see all activities performed by a malware
 any.run can be used with an account for malware analysis as well
 https://www.abuseipdb.com/
