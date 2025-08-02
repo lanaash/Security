@@ -22,5 +22,32 @@ shodan stats --facets port asn:ASXXXX
 shodan stats --facets product asn:ASXXXX
 shodan stats --facets port:22 net:192.168.0.0/24
 
+# Filters
+http.html:"Sign in"
+http.favicon.hash:[MurmurHash value]
+org:
+product:BGP, mikrotik, "Apache httpd" etc
+port:179
+net:194.154.0.0/19
+os:
+server:
+hostname:
+device:
+asn:
+version:
+http.title: Yealink
+http.favicon.hash:
+snmp.name:
+Country: GB
+
+Negate filters;
+-org: 
+
+Negate strings in data;
+
+-password
+-login
+-session
+
 
 
