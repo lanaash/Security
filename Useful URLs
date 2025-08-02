@@ -1,5 +1,4 @@
 ## IP, Email-sender & Domain reputation
-
 https://talosintelligence.com/
 https://www.virustotal.com/
 https://www.robtex.com/
@@ -7,7 +6,6 @@ https://www.threatminer.org/index.php
 
 
 ## IP & networks
-
 https://ipinfo.io/
 ASN stats https://urlhaus.abuse.ch/statistics/
 Botnet C&Cs https://feodotracker.abuse.ch/browse/
@@ -15,17 +13,14 @@ Whois the IP to see who hosts the network
 
 
 ## Websites & URL shortners
-
 urlscan.io for website info
 https://sslbl.abuse.ch for SSL Blacklist
 
 ## Email & DNS
-
 Email headers https://mxtoolbox.com/EmailHeaders.aspx
 Email and dns data https://mxtoolbox.com/
 
 ## Investigating threats
-
 Investigate IOCs at https://threatfox.abuse.ch/browse/ e.g. ioc:x.x.x.x
 www.hybrid-analysis.com can be used to see all activities performed by a malware
 any.run can be used with an account for malware analysis as well
@@ -33,10 +28,12 @@ https://www.abuseipdb.com/
 https://exchange.xforce.ibmcloud.com/
 
 ## Binary research
-
 https://www.echotrail.io/insights    # Author, paths, parents, hashes, ports
 https://lolbas-project/
 
 ## Ports
 https://www.speedguide.net/ports.php
+
+## Tactics
+https://attack.mitre.org/
 
