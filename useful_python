@@ -1,0 +1,45 @@
+## URL encode a string
+
+import urllib.parse
+myStr = urllib.parse.quote_plus('this is_a %&#<> string')
+print(myStr)
+
+
+## URL decode a file
+
+import urllib.parse
+
+input_file = "encoded_file.txt"
+with open(input_file, 'rb') as f_in:
+    encoded_data = f_in.read()
+    decoded_data = urllib.parse.unquote(encoded_data)
+    print(decoded_data)
+	
+
+	
+## Base64 decode a file
+
+import base64
+
+input_file = "encoded_file.txt"
+with open(input_file, 'rb') as f_in:
+    encoded_data = f_in.read()
+    decoded_data = base64.b64decode(encoded_data)
+    print(decoded_data)
+
+
+
+
+## Zlib decompress a file
+
+import zlib
+
+input_file = "compressed_file.bin"
+output_file = "decompressed_file.txt"
+
+with open(input_file, 'rb') as f_in:
+    compressed_data = f_in.read()
+    decompressed_data = zlib.decompress(compressed_data, -15)
+
+with open(output_file, 'wb') as f_out:
+    f_out.write(decompressed_data)
