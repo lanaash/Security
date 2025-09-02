@@ -31,7 +31,7 @@ hexs_tring = binascii.hexlify(string)
 import binascii
 
 hex_string = '68656c6c6f20776f726c64'
-string = binascii.unhexlify(hexstring)
+string = binascii.unhexlify(hex_string)
 
 
 
