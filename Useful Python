@@ -1,6 +1,7 @@
 ## URL encode a string
 
 import urllib.parse
+
 myStr = urllib.parse.quote_plus('this is_a %&#<> string')
 print(myStr)
 
