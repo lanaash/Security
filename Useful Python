@@ -2,8 +2,9 @@
 
 import urllib.parse
 
-myStr = urllib.parse.quote_plus('this is_a %&#<> string')
-print(myStr)
+string = 'this is_a %&#<> string'
+encoded_string = urllib.parse.quote_plus(string)
+
 
 
 ## URL decode a file
@@ -22,14 +23,14 @@ with open(input_file, 'rb') as f_in:
 import binascii
 
 string = b'hello world'
-hexstring = binascii.hexlify(string)
+hexs_tring = binascii.hexlify(string)
 
 
 ## Hex to ASCII
 
 import binascii
 
-hexstring = '68656c6c6f20776f726c64'
+hex_string = '68656c6c6f20776f726c64'
 string = binascii.unhexlify(hexstring)
 
 
