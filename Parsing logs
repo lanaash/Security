@@ -15,4 +15,4 @@ awk '{sum+=$3} END {print sum}'
 # perl 
 
 ## Remove newlines
-perl -pe 's/\n//' file | base64 -d
+perl -pe 's/\n//' file.txt
