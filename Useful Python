@@ -14,9 +14,25 @@ with open(input_file, 'rb') as f_in:
     encoded_data = f_in.read()
     decoded_data = urllib.parse.unquote(encoded_data)
     print(decoded_data)
-	
 
-	
+
+## ASCII to Hex
+
+import binascii
+
+string = b'hello world'
+hexstring = binascii.hexlify(string)
+
+
+## Hex to ASCII
+
+import binascii
+
+hexstring = '68656c6c6f20776f726c64'
+string = binascii.unhexlify(hexstring)
+
+
+
 ## Base64 decode a file
 
 import base64
