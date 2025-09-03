@@ -1,28 +1,28 @@
 
-# CLI tool install
+## CLI tool install
 sudo pip install shodan
 
-# API init
+## API init
 shodan init [API_Key]
 
-# IP search
+## IP search
 shodan host 192.168.0.1
 
-# Search filters
+## Search filters
 shodan search port:22 net:192.168.0.0/24
 shodan search product:"Hikvision IP Camera" asn:ASXXXX
 shodan search --fields ip_str,port,org,hostnames net:192.168.0.0/24 port:9100
 
-# Download & parse
+## Download & parse
 shodan download [filename] [filters]
 shodan parse --fields ip_str,port,org --separator , [filename].json.gz
 
-# Facets
+## Facets
 shodan stats --facets port asn:ASXXXX
 shodan stats --facets product asn:ASXXXX
 shodan stats --facets port:22 net:192.168.0.0/24
 
-# Filters
+## Filters
 http.html:"Sign in"
 http.favicon.hash:[MurmurHash value]
 org:
