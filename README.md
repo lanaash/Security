@@ -18,5 +18,5 @@ perl -pe 's/\n//' file.txt
 ```
 ## Replace string in file & save backup copy
 ```
-perl -p -i.bak -e 's/old/new/g' orig
+perl -p -i.bak -e 's/old/new/g' file
 ```
