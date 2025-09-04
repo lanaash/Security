@@ -12,7 +12,4 @@ awk '{print $1=strftime("%F %R",$1) " " $3 "  " $5 " " $7}'
 ## Sum 'column' $3 totals e.g. send/recieve bytes
 awk '{sum+=$3} END {print sum}'				
 
-# perl 
 
-## Remove newlines
-perl -pe 's/\n//' file.txt
